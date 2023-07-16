@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: default-backend
+  labels:
+    app: default-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: default-backend
+  template:
+    metadata:
+      annotations:
+         cni.projectcalico.org/ipv6pools: "[\"default-ipv6-ippool\"]"
+      labels:
+        app: default-backend
+    spec:
+      containers:
+        - name: backend
+          image: as207960/nginx-errors:(version)
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: ROCKET_ADDRESS
+              value: "::"
+            - name: ROCKET_TEMPLATE_DIR
+              value: "/templates/"
+          ports:
+            - containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: default-backend
+  labels:
+    app: default-backend
+spec:
+  selector:
+    app: default-backend
+  ports:
+    - port: 80
+      targetPort: 8000

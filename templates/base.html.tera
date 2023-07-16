@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>{% block title %}{{ info.status_reason }}{% endblock %} | AS207960 / Glauca</title>
+    <link rel="icon" href="https://as207960.net/favicon.svg">
+    <link rel="stylesheet" href="https://as207960.net/assets/css/bootstrap.css">
+
+    <style>
+        body {
+            background: linear-gradient(270deg, #319795, #2a4365, #3182ce);
+            justify-content: center;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        header img {
+            width: 200px;
+            max-width: 100%;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .error {
+            max-width: 95%;
+            width: 750px;
+        }
+    </style>
+</head>
+<body>
+<div class="card my-4 error">
+    <div class="card-body">
+        <header>
+            <img src="https://as207960.net/assets/img/logo.svg" alt=""/>
+            <h1>AS207960 / Glauca</h1>
+        </header>
+        {% block body %}
+        <h1 class="display-4">Error {{ info.status_code }}</h1>
+        <h2>{{ info.status_reason }}</h2>
+
+        <p class="lead">Well this is embarrassing...</p>
+
+        <div class="alert alert-info">
+            <p>Please quote the below ID to help us better identify this error;</p>
+            <p>
+                 <code>{{ identifier }}</code>
+            </p>
+        </div>
+        {% endblock body %}
+
+        <p><a href="https://glauca.digital" class="btn btn-primary">Back to our homepage</a></p>
+
+        <p>
+            AS207960 Cyfyngedig, trading as Glauca Digital, is:
+        </p>
+        <ul>
+            <li>
+                a limited company registered in Wales (&#x2116
+                <a href="https://find-and-update.company-information.service.gov.uk/company/12417574">12417574</a>,
+                LEI 875500FXNCJPAPF3PD10)
+            </li>
+            <li>
+                a registered data controller with the Information Commissioner's Office (&#x2116
+                <a href="https://ico.org.uk/ESDWebPages/Entry/ZA782876">ZA782876</a>)
+            </li>
+            <li>
+                registered for VAT in the UK (&#x2116 GB378323867)
+            </li>
+            <li>
+                registered for VAT in the EU (&#x2116 EU372013983)
+            </li>
+            <li>
+                registered for VAT in Turkey (&#x2116 0861333524)
+            </li>
+            <li>
+                registered for VAT in South Korea (&#x2116 522-80-03080)
+            </li>
+        </ul>
+        <p>
+            AS207960 Ewrop OÜ, trading as Glauca Digital, is:
+        </p>
+        <ul>
+            <li>
+                a limited company registered in Estonia (&#x2116 <a
+                    href="https://ariregister.rik.ee/eng/company/16755226/AS207960-Ewrop-OÜ">16755226</a>)
+            </li>
+            <li>
+                registered for VAT in Estonia (&#x2116 EE102625532)
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

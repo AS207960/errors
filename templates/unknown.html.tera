@@ -1,0 +1,9 @@
+{% extends "base" %}
+
+{% block title %}Unknown URL{% endblock %}
+
+{% block body %}
+<h1 class="display-4">Unknown URL</h1>
+
+<p class="lead">We're probably not responsible for this domain.</p>
+{% endblock body %}
